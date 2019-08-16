@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@jaredpalmer/after": "latest",
+    "antd": "^3.21.4",
     "express": "^4.16.2",
+    "helmet": "^3.20.0",
     "razzle": "^3.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^4.2.2"
   }
 }
