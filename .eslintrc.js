@@ -22,8 +22,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'import'],
   rules: {
+    'import/no-unresolved': [2, { commonjs: true, amd: true }],
     'comma-dangle': ['error', 'never'],
     'no-console': 'off',
     'react/jsx-uses-react': 'error',

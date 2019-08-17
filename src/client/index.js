@@ -5,8 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { ensureReady, After } from '@jaredpalmer/after';
 import './client.css';
 import './ant.less';
-import routes from './routes';
-import configureStore from './store';
+// eslint-disable-next-line
+import routes from '../routes';
+import configureStore from '../store';
 
 const store = configureStore(window.__PRELOADED_STATE__);
 

@@ -37,9 +37,11 @@ class Document extends React.Component {
             defer
             crossOrigin="anonymous"
           />
-          <script>
-            window.__PRELOADED_STATE__ = ${serialize(serverState)}
-          </script>
+          <span
+            dangerouslySetInnerHTML={
+              { __html: `<script>window.__PRELOADED_STATE__ = ${serialize(serverState)}</script>` } // prettier-ignore
+            }
+          />
         </body>
       </html>
     );
