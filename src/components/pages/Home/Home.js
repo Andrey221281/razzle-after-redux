@@ -1,26 +1,28 @@
-import React, { Component } from "react";
-import "./Home.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import RedTest from '../../RedTest';
+import { connect } from 'react-redux';
 
-class Home extends Component {
-  static async getInitialProps({ req, res, match, history, location, ...ctx }) {
-    return { whatever: "stuff" };
+const Home = ({ books }) => {
+  if (!books) {
+    loading;
   }
+  return (
+    <div>
+      {books.map(book => {
+        return (
+          <div key={book.id}>
+            <div>{book.name}</div>
+            <div>{book.prise}</div>
+          </div>
+        );
+      })}
+      {/* <RedTest /> */}
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div className="Home">
-        <div className="Home-header">
-          <h2>Welcome to After.js</h2>
-        </div>
-        <p className="Home-intro">
-          To get started, edit <code>src/Home.js</code> or{" "}
-          <code>src/About.js</code>and save to reload.
-        </p>
-        <Link to="/about">About -></Link>
-      </div>
-    );
-  }
-}
+const mapStateToProps = ({ books }) => {
+  return { books };
+};
 
-export default Home;
+export default connect(mapStateToProps)(Home);
